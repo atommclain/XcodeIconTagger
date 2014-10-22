@@ -19,13 +19,13 @@ The script is designed to be run as one of Xcode build phases. It uses environme
 
 The easiest way to integrate XcodeIconTagger with your project is by adding two scripts to build phases, one at the very beginning:
 
-	if [ $CONFIGURATION == "Release" ] ; then
+	if [ "$CONFIGURATION" == "Release" ] ; then
     	${SRCROOT}/XcodeIconTagger/tagIcons.sh tag MyApp/Images
 	fi
 
 and one at the very end:
 
-	if [ $CONFIGURATION == "Release" ] ; then
+	if [ "$CONFIGURATION" == "Release" ] ; then
 	    ${SRCROOT}/XcodeIconTagger/tagIcons.sh cleanup MyApp/Images
 	fi
 
